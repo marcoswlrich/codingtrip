@@ -2,15 +2,18 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { motion } from "framer-motion";
+import { HiMenuAlt3 } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
 
 const navigation = [
-  { name: "blog", href: "/blog" },
-  { name: "sobre", href: "/sobre" },
-  { name: "portfolio", href: "/portfolio" },
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
+  { name: "Sobre", href: "/sobre" },
+  { name: "Portfolio", href: "/portfolio" },
   //{ name: 'blog', href: '/blog'},
   //{ name: 'blog', href: '/blog'},
 ];
@@ -32,14 +35,16 @@ const Header = ({ isTopOfPage }: Props) => {
       >
         <div className={`${flexBetween} mx-auto w-11/12`}>
           <div className={`${flexBetween} w-full gap-16`}>
-            <Image alt="logo" src={Logo} width={50} height={50} />
+            <Link href="/">
+              <Image alt="logo" src={Logo} width={50} height={50} />
+            </Link>
 
             {isAboveMediamScreens ? (
               <div className={`${flexBetween} w-full`}>
                 <nav className={`${flexBetween} gap-8 text-base font-normal`}>
                   {navigation.map((item) => (
                     <Link
-                      className="transition duration-500 hover:text-cyan-300"
+                      className="transition duration-500 hover:text-gray-500"
                       key={item.name}
                       href={item.href}
                     >
@@ -50,7 +55,7 @@ const Header = ({ isTopOfPage }: Props) => {
               </div>
             ) : (
               <button onClick={() => setMenuOpen(!menuOpen)}>
-                <AiOutlineMenu className="h-6 w-6" />
+                <HiMenuAlt3 className="h-6 w-6" />
               </button>
             )}
           </div>
@@ -58,20 +63,31 @@ const Header = ({ isTopOfPage }: Props) => {
       </div>
 
       {!isAboveMediamScreens && menuOpen && (
-        <div className="fixed left-0 bottom-0 z-40 h-screen w-[50%] bg-blue-50 drop-shadow-xl">
-          <div className="flex justify-end p-6 top-0">
+        <div className="absolute right-0 top-0 h-screen w-full bg-[#1f2937] bg-opacity-40 z-30 flex flex-col items-end">
+          <motion.div
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="w-[70%] h-full flex bg-[#FAFAFA] flex-col items-center px-4 py-10 relative"
+          >
             <button onClick={() => setMenuOpen(!menuOpen)}>
-              <AiOutlineClose className="h-6 w-6 text-gray-400" />
+              <AiOutlineClose className="text-2xl text-gray-400 absolute top-4 right-4" />
             </button>
-          </div>
-
-          <nav className="ml-[42%] flex flex-col gap-7 text-base">
-            {navigation.map((item) => (
-              <Link key={item.name} href={item.href}>
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+            <div className="flex flex-col items-center gap-7">
+              <motion.nav
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.2, ease: "easeIn" }}
+                className="flex flex-col gap-7 text-base"
+              >
+                {navigation.map((item) => (
+                  <Link key={item.name} href={item.href}>
+                    {item.name}
+                  </Link>
+                ))}
+              </motion.nav>
+            </div>
+          </motion.div>
         </div>
       )}
     </header>
