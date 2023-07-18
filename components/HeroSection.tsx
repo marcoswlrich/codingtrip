@@ -5,7 +5,7 @@ const HeroSection = () => {
     <section className="w-full h-[755px] bg-blue-50 bg-opacity-80 flex flex-col justify-end pb-10 sm:pb32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
         <div className="w-full lg:max-w-[530px]">
-          <p className="font-mono text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-sm sm:text-base">
+          <p className=" mt-2 font-mono text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-sm sm:text-base">
             Seja bem-vindo ao
           </p>
           <h1 className="mt-2">Coding Trip</h1>
@@ -20,10 +20,11 @@ const HeroSection = () => {
           </p>
         </div>
         <Image
-          width={400}
-          height={384}
+          width={420}
+          height={404}
           src="/images/hero-image-2.svg"
           alt="Image Hero"
+          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 rounded-lg"
         />
       </div>
     </section>

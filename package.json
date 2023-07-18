@@ -1,5 +1,5 @@
 {
-  "name": "codehunter",
+  "name": "codingtrip",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
+    "framer-motion": "^10.12.22",
     "next": "^13.0.0",
     "next-sanity": "4.3.3",
     "postcss": "8.4.24",
