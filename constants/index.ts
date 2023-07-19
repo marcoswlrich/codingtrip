@@ -1,3 +1,7 @@
+import instagram from "@/public/images/instagram.svg";
+import facebook from "@/public/images/instagram.svg";
+import linkedin from "@/public/images/linkedin.svg";
+import twitter from "@/public/images/twitter.svg";
 export const navLinks = [
   {
     id: "home",
@@ -86,22 +90,22 @@ export const footerLinks = [
 export const socialMedia = [
   {
     id: "social-media-1",
-    icon: "ins",
-    link: "https://www.instagram.com/",
+    icon: "/images/github.svg",
+    link: "https://www.github.com/",
   },
   {
     id: "social-media-2",
-    icon: "fac",
-    link: "https://www.facebook.com/",
+    icon: "/images/linkedin.svg",
+    link: "https://www.linkedin.com/",
   },
   {
     id: "social-media-3",
-    icon: "twi",
+    icon: "/images/twitter.svg",
     link: "https://www.twitter.com/",
   },
   {
     id: "social-media-4",
-    icon: "lin",
-    link: "https://www.linkedin.com/",
+    icon: "/images/instagram.svg",
+    link: "https://www.instagram.com/",
   },
 ];
