@@ -44,7 +44,7 @@ const Header = ({ isTopOfPage }: Props) => {
                 <nav className={`${flexBetween} gap-8 text-base font-normal`}>
                   {navigation.map((item) => (
                     <Link
-                      className="transition duration-500 hover:text-gray-500"
+                      className="transition duration-500 hover:text-gray-300"
                       key={item.name}
                       href={item.href}
                     >
