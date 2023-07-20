@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="w-full h-[755px] bg-blue-50 bg-opacity-80 flex flex-col justify-end pb-10 sm:pb32 py-32 lg:pb-[110px]">
+    <section className="w-full lg:h-[755px] bg-blue-50 bg-opacity-80 flex flex-col justify-end pb-10 sm:pb32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
         <div className="w-full lg:max-w-[530px]">
           <p className=" mt-2 font-mono text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-sm sm:text-base">
@@ -35,7 +35,7 @@ const HeroSection = () => {
           height={404}
           src="/images/hero-image-2.svg"
           alt="Image Hero"
-          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 rounded-lg"
+          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 rounded-lg object-cover"
         />
       </div>
     </section>
